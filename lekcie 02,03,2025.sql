@@ -57,3 +57,10 @@ SELECT nazwa, cena FROM towary LIMIT 4;
 SELECT cena FROM towary WHERE nazwa = 'Ekierka';
 UPDATE dostawcy SET nazwa='Artykuly szkolne' WHERE id = 2;
 SELECT promocja, COUNT(*) AS podsumowanie FROM towary GROUP BY promocja;
+
+-- biblioteka
+SELECT imie, nazwisko FROM autorzy ORDER BY nazwisko ASC;
+INSERT INTO czytelnicy(imie, nazwisko, kod) VALUES ('Ewa', 'Kowalska', 145321);
+SELECT tytul FROM ksiazki WHERE id_kategoria=2;
+SELECT tytul FROM ksiazki JOIN wypozyczenia ON ksiazki.id=wypozyczenia.id_ksiazka WHERE wypozyczenia.id =2;
+
