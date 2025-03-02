@@ -64,3 +64,8 @@ INSERT INTO czytelnicy(imie, nazwisko, kod) VALUES ('Ewa', 'Kowalska', 145321);
 SELECT tytul FROM ksiazki WHERE id_kategoria=2;
 SELECT tytul FROM ksiazki JOIN wypozyczenia ON ksiazki.id=wypozyczenia.id_ksiazka WHERE wypozyczenia.id =2;
 
+INSERT INTO czytelnicy(imie, nazwisko, kod) VALUES ('Ewelina', 'Romanowska', 56677);
+SELECT imie, nazwisko FROM czytelnicy ORDER BY nazwisko ASC;
+SELECT tytul FROM ksiazki WHERE id_autor = 8;
+-- SELECT tytul FROM ksiazki JOIN autorzy ON ksiazki.id_autor=autorzy.id WHERE nazwisko = 'Sienkiewicz';
+SELECT autorzy.nazwisko, COUNT(ksiazki.tytul) AS ile_tytulow FROM autorzy JOIN ksiazki ON ksiazki.id_autor=autorzy.id GROUP BY nazwisko;
