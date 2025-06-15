@@ -107,4 +107,4 @@ Znajdź produkty, których cena jest pomiędzy 100 a 500.
 SELECT name, price FROM products WHERE price BETWEEN 100 AND 500
 Zadanie 20.
 Wyświetl 10 ostatnio złożonych zamówień z datą i klientem.
-SELECT customers.first_name, customers.last_name, GROUP_CONCAT(DATE(orders.order_date) SEPARATOR ', ') AS dates FROM customers JOIN orders ON customers.customer_id=orders.customer_id GROUP BY customers.customer_id LIMIT 10
+SELECT customers.first_name, customers.last_name, orders.order_date AS dates FROM customers JOIN orders ON customers.customer_id=orders.customer_id ORDER BY orders.order_date DESC  LIMIT 10
