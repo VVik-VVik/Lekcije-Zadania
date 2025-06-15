@@ -20,7 +20,10 @@ SELECT categories.category_name, COUNT(products.product_id) FROM products JOIN c
 
 Zadanie 6
 Znajdź klientów, którzy złożyli zamówienia na kwotę większą niż 1000.
-SELECT customers.first_name, customers.last_name, orders.order_id, orders.total_amount FROM customers JOIN orders ON customers.customer_id=orders.customer_id WHERE orders.total_amount > 1000
+SELECT DISTINCT c.first_name, c.last_name, o.total_amount
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+WHERE o.total_amount > 1000;
 
 Zadanie 7
 Wyświetl zamówienia z datą i sumą kwoty zamówienia.
