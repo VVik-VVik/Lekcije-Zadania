@@ -32,7 +32,7 @@ SELECT order_items.order_item_id, products.name FROM order_items JOIN products O
   
 Zadanie 9
 Wyświetl klientów i liczbę zamówień, jakie złożyli.
-SELECT customers.first_name, customers.last_name, COUNT(orders.order_id) AS liczba FROM orders JOIN customers ON orders.customer_id = customers.customer_id ?????
+SELECT customers.first_name, customers.last_name, COUNT(orders.order_id) AS liczba FROM orders JOIN customers ON orders.customer_id = customers.customer_id GROUP BY customers.customer_id
 
 Zadanie 10
 Znajdź produkty, których cena jest poniżej średniej ceny wszystkich produktów.
